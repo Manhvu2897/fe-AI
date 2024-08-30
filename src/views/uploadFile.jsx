@@ -96,6 +96,7 @@ const UploadFile = () => {
       content: (
         <div style={{ overflow: "auto", maxHeight: "50vh" }}>
           <JSONPretty id="json-pretty" data={data}></JSONPretty>
+          <div>{response.document_type}</div>
         </div>
       ),
       onOk() {},
