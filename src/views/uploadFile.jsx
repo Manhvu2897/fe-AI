@@ -44,7 +44,7 @@ const UploadFile = () => {
     setLoading(true);
     axios({
       method: "POST",
-      url: "http://10.2.169.12:8888/api/v1/api_document_file/upload-file",
+      url: `${process.env.REACT_APP_API_AI}/api/v1/api_document_file/upload-file`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -73,7 +73,7 @@ const UploadFile = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: "http://10.2.169.12:8888/api/v1/api_document_file/get_all_document?page_size=1000000",
+      url: `${process.env.REACT_APP_API_AI}/api/v1/api_document_file/get_all_document?page_size=1000000`,
     })
       .then((res) => {
         setLoading(false);
@@ -111,7 +111,8 @@ const UploadFile = () => {
     setLoading(true);
     axios({
       method: "GET",
-      url: `http://10.2.169.12:8888/api/v1/api_document_file/detail/` + id,
+      url:
+        `${process.env.REACT_APP_API_AI}/api/v1/api_document_file/detail/` + id,
     })
       .then((res) => {
         setLoading(false);
@@ -202,7 +203,7 @@ const UploadFile = () => {
             size="large"
             onClick={handleUpload}
           >
-            Download
+            Upload
           </Button>
         ) : (
           <div className="eightbit-btn" onClick={handleUpload}>
